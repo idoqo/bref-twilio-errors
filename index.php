@@ -1,6 +1,5 @@
 <?php
 use Maknz\Slack\Client;
-use \Twilio\Security\RequestValidator;
 /**
  * Responds to incoming webhook from the Twilio Console Debugger
  *

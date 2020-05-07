@@ -2,8 +2,11 @@ service: app
 
 provider:
     name: aws
-    region: us-east-1
+    region: us-west-2
     runtime: provided
+    profile: bref
+    environment:
+        SLACK_HOOK_URL: ${ssm:/bref-twilio-errors/slack-hook}
 
 plugins:
     - ./vendor/bref/bref
