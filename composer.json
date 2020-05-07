@@ -2,6 +2,8 @@
     "require": {
         "bref/bref": "^0.5.24",
         "twilio/sdk": "^6.4",
-        "vlucas/phpdotenv": "^4.1"
+        "vlucas/phpdotenv": "^4.1",
+        "ext-json": "*",
+        "maknz/slack": "^1.7"
     }
 }
