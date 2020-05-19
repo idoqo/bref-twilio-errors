@@ -1,4 +1,4 @@
-## API Credentials
+Companion article project to forward errors in your Twilio application to a Slack channel.
 ### AWS
 You'll need the AWS credentials of an IAM user with the following permissions:
 - APIGateway
