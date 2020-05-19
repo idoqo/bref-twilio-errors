@@ -2,9 +2,9 @@ service: app
 
 provider:
     name: aws
-    region: us-west-2
+    region: us-west-2 # your IAM user's AWS region
     runtime: provided
-    profile: bref
+    profile: bref # the profile specified while running `serverless config credential...`
     environment:
         SLACK_HOOK_URL: ${ssm:/bref-twilio-errors/slack-hook}
 

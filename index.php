@@ -25,22 +25,22 @@ try {
     $message .= json_encode($params->more_info, JSON_PRETTY_PRINT)."\n";
     $message .= "```";
     sendTwilioError($message);
-    header("Content-type: application/json");
-    echo json_encode(json_encode($params));
 }
 catch (Exception $e) {
     sendHandlerError($e->getMessage());
 }
+header("Content-type: application/json");
+echo json_encode(['message' => "OK"]);
 exit(0);
 
 function sendHandlerError($message) {
-    $slackHookUrl = getenv('SLACK_HOOK_URL');
+    $slackHookUrl = getenv("SLACK_HOOK_URL");
     $client = new Client($slackHookUrl);
     $client->to('#general')->send($message);
 }
 
 function sendTwilioError($message) {
-    $slackHookUrl = getenv('SLACK_HOOK_URL');
+    $slackHookUrl = getenv("SLACK_HOOK_URL");
     $client = new Client($slackHookUrl);
     $client->to('#general')
         ->enableMarkdown()
